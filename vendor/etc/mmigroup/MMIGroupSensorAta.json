@@ -1,0 +1,104 @@
+{
+  "itemConfig": [
+    {
+      "showName": "Proximity_st",
+      "action": "com.mmigroup.action.PROXIMITY_XM",
+      "support": true,
+      "automatic": true,
+      "paramconfig": {
+        "distance_tolerance": 0.5,
+        "specialTest": true,
+        "min":0,
+        "max":1000
+      }
+    },
+    {
+      "showName": "Proximity_C",
+      "action": "com.mmigroup.action.PROXIMITY_XM",
+      "support": true,
+      "automatic": true,
+      "paramconfig": {
+        "distance_tolerance": 0.5,
+        "rawData": {
+          "min": 0,
+          "max": 1000
+        },
+        "do_calibration": {
+          "support": true,
+          "4_cm_minus_no_cover_min": 4,
+          "3_cm_minus_no_cover_min": 15,
+          "3_cm_minus_4_cm_min": 8,
+          "3_cm": {
+            "min": 0,
+            "max": 3000
+          },
+          "4_cm": {
+            "min": 0,
+            "max": 1800
+          },
+          "noCover": {
+            "min": 0,
+            "max": 1000
+          },
+          "tpmodel_table": {
+            "EBBG": {
+              "WHITE": 0.56,
+              "BLACK": 0.57
+            },
+            "BOEN": {
+              "WHITE": 0.57,
+              "BLACK": 0.57
+            },
+            "CSOT": {
+              "WHITE": 0.58,
+              "BLACK": 0.58
+            },
+            "o-film": {
+              "WHITE": 0.3085,
+              "BLACK": 0.3085
+            },
+            "TRULY": {
+              "WHITE": 0.3247,
+              "BLACK": 0.3247
+            },
+            "LENS": {
+              "WHITE": 0.5622,
+              "BLACK": 0.5788
+            }
+          }
+        },
+		"calibration_apply": true,
+		"calibration_scheme":"xiaomi_qcom"
+      }
+    },
+    {
+      "showName": "Optical",
+      "action": "com.mmigroup.action.OPTICAL",
+      "support": true,
+      "automatic": true,
+      "paramconfig": {
+        "lux_std": 297,
+        "lux_pet": 99,
+        "is_check_range": true
+      }
+    },
+    {
+      "showName": "Optical_c",
+      "action": "com.mmigroup.action.OPTICAL",
+      "support": true,
+      "automatic": true,
+      "paramconfig": {
+        "lux_std": 297,
+        "lux_pet": 99,
+        "is_check_range": false,
+	 "calibration_apply": true,
+		"calibration_scheme":"xiaomi_qcom",
+        "do_calibration": true,
+        "coef":{
+          "min":200,
+          "max":3800
+        }
+      }
+    }
+  ]
+}

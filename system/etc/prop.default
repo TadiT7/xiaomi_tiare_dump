@@ -1,0 +1,18 @@
+#
+# ADDITIONAL_DEFAULT_PROPERTIES
+#
+ro.factory_mode=0
+ro.wt_final_release=1
+security.perf_harden=1
+ro.secure=1
+ro.adb.secure=1
+ro.allow.mock.location=0
+ro.debuggable=0
+#
+# BOOTIMAGE_BUILD_PROPERTIES
+#
+ro.bootimage.build.date=Mon Feb 18 18:34:12 WIB 2019
+ro.bootimage.build.date.utc=1550489652
+ro.bootimage.build.fingerprint=Xiaomi/tiare/tiare:8.1.0/OPM1.171019.026/V10.2.6.0.OCLMIXM:user/release-keys
+persist.sys.usb.config=none
+
