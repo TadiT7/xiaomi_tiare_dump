@@ -1,0 +1,6 @@
+# miui init rc
+on post-fs-data
+    mkdir /data/system 0775 system system
+    mkdir /data/system/mi_cust 0755 system system
+    restorecon_recursive /data/system/mi_cust
+

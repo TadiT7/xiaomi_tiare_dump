@@ -1,0 +1,481 @@
+{
+  "itemConfig": [
+    {
+      "showName": "VersionInfo",
+      "action": "com.mmigroup.action.FACTORYVERSION",
+      "support": true,
+      "automatic": false,
+      "paramconfig": {
+        "AddInfo": [
+          "SecureBoot",
+          "TPcolor",
+          "CPUID",
+          "TP",
+          "RPMB",
+          "CameraInfo",
+          "BuildNumber",
+          "BaseBandVersion",
+          "KernelVersion",
+          "LCM"
+        ]
+      }
+    },
+    {
+      "showName": "KeyPadAndVibrator",
+      "action": "com.mmigroup.action.KEYANDVIBRATOR",
+      "support": true,
+      "automatic": false,
+      "paramconfig": {
+        "shortInterval": [
+          1000,
+          2000
+        ],
+        "longInterval": [
+          0,
+          1000
+        ],
+        "keyCode": [
+          "VOLUME_UP",
+          "VOLUME_DOWN",
+          "POWER"
+        ]
+      }
+    },
+	{
+      "showName": "LCD",
+      "action": "com.mmigroup.action.LCDUP",
+      "support": true,
+      "automatic": false,
+      "support_autoTest_autopass": false,
+      "paramconfig": {
+        "auto_switch": false,
+        "lcd_pic": [
+          "R=2000",
+          "G=2000",
+          "B=2000",
+          "L255=2000",
+		  "L127=3000",
+		  "L64=3000",
+          "L0=2000",
+		  "edgecheck2=3000",
+		  "cross2=3000",
+		  "cross3=3000",
+		  "sub1dot127=1000",
+		  "Transition_Gray=3000"
+        ]
+      }
+    },
+    {
+      "showName": "PlatMainCamera",
+      "action": "com.mmigroup.action.PLATFORMCAMERA",
+      "support": true,
+      "automatic": false,
+      "support_autoTest_autopass": false,
+      "paramconfig": {
+        "cameraId": 0,
+        "support_cameraCheck": true
+      }
+    },
+    {
+      "showName": "PlatSubCamera",
+      "action": "com.mmigroup.action.PLATFORMCAMERA",
+      "support": true,
+      "automatic": false,
+      "support_autoTest_autopass": false,
+      "paramconfig": {
+        "cameraId": 2,
+        "support_cameraCheck": true
+      }
+    },
+	{
+      "showName": "PlatCameraZoom",
+      "action": "com.mmigroup.action.PLATFORMCAMERA",
+      "support": true,
+      "automatic": false,
+      "support_autoTest_autopass": false,
+      "paramconfig": {
+        "cameraId": 0,
+        "is_zoom_test": true,
+        "support_cameraCheck": true
+      }
+    },
+    {
+      "showName": "PlatFrontCamera",
+      "action": "com.mmigroup.action.PLATFORMCAMERA",
+      "support": true,
+      "automatic": false,
+      "support_autoTest_autopass": false,
+      "paramconfig": {
+        "cameraId": 1,
+        "support_cameraCheck": true
+      }
+    },
+	{
+      "showName": "LightTEST",
+      "action": "com.mmigroup.action.LightTEST",
+      "support": true,
+      "automatic": false,
+      "paramconfig": {
+        "Light": [
+          {
+            "type": "led",
+            "name": "redLed",
+            "color": "red",
+            "id": 0,
+            "support": true
+          },
+          {
+            "type": "led",
+            "name": "greenLed",
+            "color": "green",
+            "id": 0,
+            "support": true
+          },
+          {
+            "type": "led",
+            "name": "blueLed",
+            "color": "blue",
+            "id": 0,
+            "support": true
+          },
+          {
+            "type": "flashlith",
+            "name": "MainFlashlight",
+            "id": 0
+          },
+          {
+            "type": "backlight",
+            "name": "Backlight",
+            "dark": 10,
+            "bright": 255
+          }
+        ]
+      }
+    },
+	{
+      "showName": "Speaker",
+      "action": "com.mmigroup.action.audioloop.AUDIOPLAYER",
+      "support": true,
+      "automatic": false,
+      "paramconfig": {
+        "volume_rate": 1.0,
+        "is_show_list": true,
+        "music_name": [
+          "female_voice_english",
+          "male_voice_english",
+          "cant_hear"
+        ],
+        "music_rawResource_name": [
+          "girlenglish",
+          "voice_boy_english"
+        ],
+        "audioConfig": [
+          "mmitest=on;outputdevice=speaker"
+        ]
+      }
+    },
+    {
+      "showName": "Receiver",
+      "action": "com.mmigroup.action.audioloop.AUDIOPLAYER",
+      "support": true,
+      "automatic": false,
+      "paramconfig": {
+        "volume_rate": 1.0,
+        "is_show_list": true,
+        "music_name": [
+          "female_voice_english",
+          "female_voice_chinese",
+          "cant_hear"
+        ],
+        "music_rawResource_name": [
+          "girlenglish",
+          "tone112"
+        ],
+        "audioConfig": [
+          "mmitest=on;outputdevice=receiver"
+        ]
+      }
+    },
+    {
+      "showName": "MainMicToReceiver",
+      "action": "com.mmigroup.action.audioloop.AUDIOLOOPBACK",
+      "support": true,
+      "automatic": false,
+      "paramconfig": {
+        "volume_rate": 1.0,
+        "loop_type": "manual_loop",
+        "audioConfig": [
+          "mmitest=on;inputdevice=mainmic",
+          "mmitest=on;outputdevice=receiver"
+        ],
+        "markedWords":"mainmictoReceiver_speakernotify"
+      }
+    },
+	{
+      "showName": "SubMicToSpeaker",
+      "action": "com.mmigroup.action.audioloop.AUDIOLOOPBACK",
+      "support": true,
+      "automatic": false,
+      "paramconfig": {
+        "volume_rate": 1.0,
+        "loop_type": "manual_loop1",
+        "audioConfig": [
+          "SET_MIC_CHOOSE=2",
+          "mmitest=on;inputdevice=submic;outputdevice=speaker"
+        ],
+        "markedWords": "submictoSpeaker_speakernotify"
+      }
+    },
+	{
+      "showName": "HeadSet",
+      "action": "com.mmigroup.action.HEADPHONE",
+      "support": true,
+      "automatic": false,
+      "paramconfig": {
+        "volume_rate": 0.5,
+        "is_test_type_c": false,
+        "key_show_name": [
+          "start_and_stop"
+        ],
+        "keyCode": [
+          "HEADSETHOOK"
+        ]
+      }
+    },
+	{
+      "showName": "TouchPanel",
+      "action": "com.mmigroup.action.TOUCHPANEL",
+      "support": true,
+      "automatic": false
+    },
+    {
+      "showName": "TpOpenShort",
+      "action": "com.mmigroup.action.TPOPENSHORT",
+      "support": true,
+      "automatic": false
+    },
+	{
+      "showName": "Charge",
+      "action": "com.mmigroup.action.BATTERY",
+      "support": true,
+      "automatic": false,
+      "support_background_test": false,
+      "background_Service": "com.factory.mmigroup.item.BatteryService",
+      "paramconfig": {
+        "is_miui_charge": true,
+        "check_usb_is_unplug": true,
+        "Voltage": {
+          "min": 2500,
+          "max": 4500
+        },
+        "temp": {
+          "min": -20,
+          "max": 800
+        },
+        "ChargerVoltage": {
+          "min": 0,
+          "max": 0
+        },
+        "ChargerCurrent": {
+          "min": -3000,
+          "max": 1500
+        }
+      }
+    },
+    {
+      "showName": "Battery",
+      "action": "com.mmigroup.action.BATTERY",
+      "support": true,
+      "automatic": true,
+      "support_background_test": false,
+      "background_Service": "com.factory.mmigroup.item.BatteryService",
+      "paramconfig": {
+        "is_miui_battery": true,
+        "check_usb_is_unplug": false,
+        "is_show_batteryTemperature": false,
+        "Voltage": {
+          "min": 2500,
+          "max": 4500
+        },
+        "temp": {
+          "min": -20,
+          "max": 800
+        },
+        "ChargerVoltage": {
+          "min": 0,
+          "max": 0
+        },
+        "ChargerCurrent": {
+          "min": -3000,
+          "max": 1500
+        },
+        "errorBatteryId": [
+          "Fail",
+          "NULL",
+          "Not found",
+          "Generic_Battery"
+        ]
+      }
+    },
+	{
+      "showName": "SdCard",
+      "action": "com.mmigroup.action.SDCARD",
+      "support": true,
+      "automatic": false,
+      "support_background_test": false,
+      "background_Service": "com.factory.mmigroup.item.SDCardService"
+    },
+    {
+      "showName": "DualSIMCard",
+      "action": "com.mmigroup.action.DualSim",
+      "support": true,
+      "automatic": false,
+      "support_background_test": false,
+      "background_Service": "com.factory.mmigroup.item.DualSimCardService"
+    },
+    {
+      "showName": "WlanAP",
+      "action": "com.mmigroup.action.WLAN",
+      "support": true,
+      "automatic": false,
+      "support_background_test": false,
+      "background_Service": "com.factory.mmigroup.item.WlanService",
+      "support_autoTest_autopass": false,
+      "paramconfig": {
+        "is_test_address": false,
+        "is_test_scan": true
+      }
+    },
+    {
+      "showName": "WlanAddress",
+      "action": "com.mmigroup.action.WLAN",
+      "support": true,
+      "automatic": false,
+      "support_background_test": false,
+      "background_Service": "com.factory.mmigroup.item.WlanService",
+      "support_autoTest_autopass": false,
+      "paramconfig": {
+        "is_test_address": true,
+        "is_test_scan": false,
+        "support_verify_mac":true
+      }
+    },
+    {
+      "showName": "BluetoothAddress",
+      "action": "com.mmigroup.action.BLUETOOTH",
+      "support": true,
+      "automatic": false,
+      "support_background_test": false,
+      "background_Service": "com.factory.mmigroup.item.BluetoothService",
+      "support_autoTest_autopass": false,
+      "paramconfig": {
+        "is_test_address": true,
+        "is_test_scan": false
+      }
+    },
+    {
+      "showName": "BluetoothDevice",
+      "action": "com.mmigroup.action.BLUETOOTH",
+      "support": true,
+      "automatic": false,
+      "support_background_test": false,
+      "background_Service": "com.factory.mmigroup.item.BluetoothService",
+      "support_autoTest_autopass": false,
+      "paramconfig": {
+        "is_test_address": false,
+        "is_test_scan": true
+      }
+    },
+    {
+      "showName": "GPS",
+      "action": "com.mmigroup.action.GPS",
+      "support": true,
+      "automatic": false,
+      "paramconfig": {
+        "is_show_location": false
+      },
+      "support_background_test": true,
+      "background_Service": "com.factory.mmigroup.item.GPSService"
+    },
+    {
+      "showName": "OTG",
+      "action": "com.mmigroup.action.OTG",
+      "support": true,
+      "automatic": false
+    },
+	    {
+      "showName": "Accelerometer",
+      "action": "com.mmigroup.action.ACCELEROMETER",
+      "support": true,
+      "automatic": true,
+      "paramconfig": {
+        "support_calibrate": true,
+        "support_axialresult": true,
+        "support_angle45": true,
+        "support_angleneg45": true,
+        "data_suffix_rate": 1000,
+        "gravity_45_degree_x": -4.9000,
+        "gravity_45_degree_y": 4.9000,
+        "gravity_45_degree_z": 6.9340,
+        "gravity_45_degree_tolerance": 0.71,
+        "gravity_axial_limit": 1.5,
+        "is_auto_calibrate": false
+      }
+    },
+    {
+      "showName": "Optical",
+      "action": "com.mmigroup.action.OPTICAL",
+      "support": true,
+      "automatic": true,
+      "paramconfig": {
+        "lux_std": 297,
+        "lux_pet": 99,
+        "is_check_range": true,
+        "value_change_in": 50
+      }
+    },
+    {
+      "showName": "Proximity",
+      "action": "com.mmigroup.action.PROXIMITY",
+      "support": true,
+      "automatic": true,
+      "paramconfig": {
+        "distance_tolerance": 0.5
+      }
+    },
+    {
+      "showName": "Gyroscope",
+      "action": "com.mmigroup.action.GYROSCOPE",
+      "support": true,
+      "automatic": true,
+      "paramconfig": {
+        "support_calibrate": true,
+        "support_test": true,
+        "gyroscope_tolerance": 9,
+        "is_auto_calibrate": false
+      }
+    },
+    {
+      "showName": "Magnetic",
+      "action": "com.mmigroup.action.MAGNETIC",
+      "support": true,
+      "automatic": true,
+      "paramconfig": {
+        "magnetism_tolerance": 30.0
+      }
+    },
+	{
+      "showName": "fingerprint",
+      "action": "com.mmigroup.action.FINGERPRINT",
+      "support": true,
+      "automatic": false,
+      "paramconfig": {
+        "is_need_nextButton": true,
+        "support_selfTest": true,
+        "support_checkBoardTest": true,
+        "support_enrolTest": true,
+        "support_identifyTest": true
+      }
+    }
+  ]
+}
